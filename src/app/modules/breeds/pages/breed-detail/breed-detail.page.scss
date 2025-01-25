@@ -1,0 +1,36 @@
+.breed-detail-page {
+  &__loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+  }
+}
+
+
+.breed-detail-info {
+  &__header {
+    position: relative;
+    height: 40vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f9f9f9;
+
+  }
+
+  &__img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  &__content {
+    position: relative;
+    padding: 16px;
+    height: calc(60vh - 110px);
+    overflow-y: auto;
+  }
+}

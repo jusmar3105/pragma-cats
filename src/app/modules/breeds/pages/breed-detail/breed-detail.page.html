@@ -1,0 +1,54 @@
+<ion-header mode="md">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/breed-list"></ion-back-button>
+    </ion-buttons>
+    <ion-title *ngIf="breed">{{ breed.name }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content mode="ios" scroll-y="false">
+  <div class="breed-detail-page glass-bg">
+    <div class="breed-detail-page__loader" *ngIf="!breed">
+      <ion-spinner name="bubbles"></ion-spinner>
+    </div>
+    <div class="breed-detail-info ion-padding" *ngIf="breed">
+      <ion-avatar class="breed-detail-info__header">
+        <img class="breed-detail-info__img" [src]="breed.image?.url" />
+      </ion-avatar>
+      <div class="breed-detail-info__content">
+        <ion-label class="ion-margin-end">
+          <h2>{{ breed.description }}</h2>
+        </ion-label>
+        <ion-label class="ion-margin-end">
+          <p>Country:</p>
+          <h2>{{ breed.origin }}</h2>
+        </ion-label>
+        <ion-label class="ion-margin-end">
+          <p>Intellligence:</p>
+          <h2>{{ breed.intelligence }}</h2>
+        </ion-label>
+        <ion-label class="ion-margin-end">
+          <p>Temperament:</p>
+          <h2>{{ breed.temperament }}</h2>
+        </ion-label>
+        <ion-label class="ion-margin-end">
+          <p>Life time (years):</p>
+          <h2>{{ breed.life_span }}</h2>
+        </ion-label>
+        <ion-label class="ion-margin-end">
+          <p>Child friendly:</p>
+          <h2>{{ breed.child_friendly }}</h2>
+        </ion-label>
+        <ion-label class="ion-margin-end">
+          <p>Stranger friendly:</p>
+          <h2>{{ breed.stranger_friendly }}</h2>
+        </ion-label>
+        <ion-label class="ion-margin-end">
+          <p>Dog friendly:</p>
+          <h2>{{ breed.dog_friendly }}</h2>
+        </ion-label>
+      </div>
+    </div>
+  </div>
+</ion-content>

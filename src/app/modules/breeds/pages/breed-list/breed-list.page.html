@@ -1,0 +1,24 @@
+<ion-header mode="md">
+  <ion-toolbar>
+    <ion-title>Cats Breeds</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content mode="ios">
+  <div class="glass-bg">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12">
+          <ion-searchbar mode="md" class="breed-search" animated="true"  [debounce]="1000" placeholder="Search..." (ionInput)="searchBreeds($event)"></ion-searchbar>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <app-breed-card *ngFor="let breed of filteredBreedsList" [breed]="breed"></app-breed-card>
+    <ion-infinite-scroll (ionInfinite)="getBreedsList($event)">
+      <ion-infinite-scroll-content
+        loadingSpinner="bubbles"
+        loadingText="Loading more breeds...">
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+  </div>
+</ion-content>
